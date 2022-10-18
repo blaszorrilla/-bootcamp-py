@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Desafío HTML + CSS</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main>
+		<div class="banner"></div>
+	<div class="navbar">
+	  <a href="#home" id="home">Home</a>
+	  <a href="#media">Media</a>
+	  <a href="#products">Products</a>
+			<div class="dropdown">
+		    <button class="dropbtn">Dropdown 
+		    </button>
+		    <div class="dropdown-content">
+		      <a href="#">Link 1</a>
+		      <a href="#">Link 2</a>
+		      <a href="#">Link 3</a>
+		    </div>
+		  </div> 
+	   <input type="text" placeholder="Search..">
+	  <br>
+	</div>
+	<div class="media" id="media">
+	  <div class="media-object">&#x1F60E;</div>
+	  <div class="media-body">
+	    <h3 class="media-heading">Media</h3>
+	    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+	  </div>
+	</div>
+
+	<div class="row">
+		<h2 style="text-align: left" id="products">Products</h2>
+	  <div class="column">
+	    <div class="card">
+	    	<img src="img/printer.png" width="150" height="150">
+	      <h3>Impresora HP</h3>
+	       <p class="price">300.000 gs</p>
+	       <p><button class="buy">Comprar</button></p>
+	    </div>
+	  </div>
+
+	  <div class="column">
+	    <div class="card">
+	    	<img src="img/galaxya10.jpg" width="150" height="150">
+	      <h3>Samsung A 10</h3>
+	      <p class="price">800.000 gs</p>
+	       <p><button class="buy">Comprar</button></p>
+	    </div>
+	  </div>
+	  
+	  <div class="column">
+	    <div class="card">
+	    	<img src="img/macbook.jpg" width="150" height="150">
+	      <h3>MacBook</h3>
+	      <p class="price">5.000.000 gs</p>
+	       <p><button class="buy">Comprar</button></p>
+	    </div>
+	  </div>
+   </div>
+	</main>
+</body>
+</html>
