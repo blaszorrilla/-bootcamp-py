@@ -1,0 +1,44 @@
+
+<div class="container">
+<nav class="navbar navbar-dark bg-dark">
+<a class="navbar-brand" href="#"></a>
+</nav> 
+<div class="row"> 
+<%= render 'shared/header'  %>
+<div class="col-md-10">
+
+<h1>Productos</h1>
+<%= link_to "Nuevo Producto", new_product_path %>
+<% if flash[:notice] %>
+    <div class="alert alert-success" role="alert" id="notice" class="notice">
+        <%= flash[:notice] %>                                    
+    </div>
+<% end %>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+      <th scope="col">Nombre</th>
+      <th  scope="col">Descripcion</th>
+      <th  scope="col">Imagen</th>
+      <th  scope="col">Precio</th>
+      <th  scope="col">Opciones</th>
+      <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @products.each do |product| %>
+        <tr>
+        
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= image_tag product.image, width: 100 if product.image.attached? %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to 'Ver', :action => :show, :id => product.id%></td>
+       </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <div>
+    <div>
+    <div>

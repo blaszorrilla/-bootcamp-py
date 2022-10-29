@@ -1,0 +1,17 @@
+<div class="container card">
+<h1><%= @post.title %></h1>
+    <div class="row">
+        <div class="col-sm-6"><%= @post.description %></div>
+        <div class="col-sm-6"><%= image_tag @post.image, width: 200 if @post.image.attached? %></div>
+        
+    </div>
+</div>
+
+<p style="color: green"><%= notice %></p>
+
+
+<div class="row">
+  <div class="col-sm-3"><%= link_to 'Editar', edit_post_path(@post) %></div
+  <div class="col-sm-3"><%= button_to 'Eliminar', @post, method: :delete %></div
+  <div class="col-sm-3"><%= link_to 'Volver',posts_path %></div
+</div>

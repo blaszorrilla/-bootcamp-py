@@ -1,0 +1,43 @@
+
+<div class="container">
+<nav class="navbar navbar-dark bg-dark">
+<a class="navbar-brand" href="#">Navbar</a>
+</nav> 
+<div class="row"> 
+<%= render 'shared/header'  %>
+<div class="col-md-10">
+
+<h1>Posts</h1>
+<%= link_to "Nuevo Post", new_post_path %>
+<% if flash[:notice] %>
+    <div class="alert alert-success" role="alert" id="notice" class="notice">
+        <%= flash[:notice] %>                                    
+    </div>
+<% end %>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+      <th scope="col">Nombre</th>
+      <th  scope="col">Descripcion</th>
+      <th  scope="col">Imagen</th>
+      <th  scope="col">Opciones</th>
+      <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+        
+        <td><%= post.title %></td>
+        <td><%= post.description %></td>
+        <td><%= image_tag post.image, width: 100 if post.image.attached? %></td>
+        
+        <td><%= link_to 'Ver', :action => :show, :id => post.id%></td>
+       </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <div>
+    <div>
+    <div>

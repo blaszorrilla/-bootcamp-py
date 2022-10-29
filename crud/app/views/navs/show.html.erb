@@ -1,0 +1,13 @@
+<div class="container card">
+    <h1><%= @nav.title %></h1>
+    <div class="row">
+        <div class="col-sm-6"><%= @nav.title %></div>
+     
+    </div>
+    <p style="color: green"><%= notice %></p>
+<div class="row">
+    <div class="col-sm-4"><%= link_to 'Editar', edit_nav_path(@nav) %></div>
+    <div class="col-sm-4"><%= button_to 'Eliminar', @nav, method: :delete %></div
+    <div class="col-sm-4"><%= link_to 'Volver',:action => :index %></div
+</div>
+
