@@ -1,0 +1,14 @@
+<div class="container card">
+    <h1><%= @product.name %></h1>
+    <div class="row">
+        <div class="col-sm-6"><%= @product.description %></div>
+        <div class="col-sm-6"><%= image_tag @product.image, width: 200 if @product.image.attached? %></div>
+        <div class="col-sm-6"><%= @product.price %></div>
+    </div>
+    
+<div class="row">
+    <div class="col-sm-4"><%= link_to 'Editar', edit_product_path(@product) %></div>
+    <div class="col-sm-4"><%= button_to 'Eliminar', @product, method: :delete %></div
+    <div class="col-sm-4"><%= link_to 'Volver',:action => :index %></div
+</div>
+

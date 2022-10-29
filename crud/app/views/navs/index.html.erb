@@ -1,0 +1,40 @@
+
+<div class="container">
+<nav class="navbar navbar-dark bg-dark">
+<a class="navbar-brand" href="#"></a>
+</nav> 
+<div class="row"> 
+<%= render 'shared/header'  %>
+<div class="col-md-10">
+
+<h1>Navbar</h1>
+<%= link_to "Nuevo Nav", new_nav_path %>
+<% if flash[:notice] %>
+    <div class="alert alert-success" role="alert" id="notice" class="notice">
+        <%= flash[:notice] %>                                    
+    </div>
+<% end %>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+      <th  scope="col">Titulo</th>
+      <th  scope="col">Opciones</th>
+      <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @navs.each do |nav| %>
+        <tr>
+        
+        <td><%= nav.title %></td>
+       
+        <td><%= link_to 'Ver', :action => :show, :id => nav.id%></td>
+       </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <div>
+    <div>
+    <div>
+

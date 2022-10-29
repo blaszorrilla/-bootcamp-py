@@ -1,0 +1,59 @@
+<h1>Frontend</h1>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <a class="navbar-brand" class="img-fluid"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarsExample07">
+          <% @navs.each do |nav| %>  
+          <ul class="navbar-nav mr-auto">
+           
+              <li class="nav-item active">
+
+              <a class="nav-link" href=""><%= nav.title %><span class="sr-only">(current)</span></a>
+            </li>
+            
+            </ul>
+            <% end %>
+          </div>
+        </div>
+      </nav> 
+     
+      <div class="container">
+      <h3>Posts</h3>
+      <div class="col-12">
+          <% @posts.each do |post| %>
+            <div class="media">
+              <div class="media-body card-text">
+              <h5 class="mt-0"><%= post.title %></h5>
+              <%= post.description %>
+              <p><%= image_tag post.image, width: 100 if post.image.attached? %></p>
+              </div>
+            </div>
+          <% end %>
+
+      </div>
+      </div>  
+
+   
+        <div class="container">
+        <h3>Products</h3>
+        <div class="row justify-content-around">
+
+        <% @products.each do |product| %>
+          <div class="card col">
+          <h3 class="card-title"><%= product.name %></h3>
+          <p class="card-text"><%= image_tag product.image, width: 100 if product.image.attached? %></p>
+          <p class="card-text"><%= product.description %></p>
+          <p class="card-text"><%= product.price %> Gs</p>
+          </div>
+          
+          <% end %>
+        </div>
+          
+        </div>
+     
+      
+    
